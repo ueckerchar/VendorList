@@ -24,22 +24,44 @@
 import csv
 
 # open the vendorlist file
-
+infile = open('VendorList.csv','r')
+csvfile = csv.reader(infile, delimiter=',')
+ 
 
 # create a csv object from the file object
 
 
 # create an output file
+outfile = open('marketinglistFINAL.csv','w')
 
+next(csvfile)
 
+outfile.write('Name,Email,Phone\n')
 
 
 
 # create an empty dictionary
-
-
-
+customer = {}
 # iterate through the csv object
+for record in csvfile:
+    customer['fullName'] = record[1] + record[2]
+    customer['email'] = record[4]
+    customer['phone'] = record[5]
+
+
+for x in customer:
+    
+
+    outfile.write(x['fullName']+x['email']+x['phone'])
+    
+
+    print(['fullName'][x])
+
+outfile.close()
+
+
+
+
 
 
 
