@@ -45,15 +45,15 @@ customer = {}
 # iterate through the csv object
 for record in csvfile:
     customer['fullName'] = record[1] + record[2]
-    customer['email'] = record[4]
-    customer['phone'] = record[5]
+    customer['fullName']['email'] = record[4]
+    customer['fullName']['phone'] = record[5]
 
 
 for x in customer:
     
 
-    outfile.write(x['fullName']+x['email']+x['phone'])
-    
+    outfile.write(x[fullName]+','+x[fullName][email]+','+x[fullName][phone])
+
 
     print(['fullName'][x])
 
